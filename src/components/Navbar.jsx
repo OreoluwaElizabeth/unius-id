@@ -28,7 +28,7 @@ const Navbar = () => {
                         <a href="/" className="text-white no-underline text-base hover:text-[#6495ED]">Docs</a>
                     </li>
                 </ul>
-                <button className="bg-transparent text-white border-2 border-[#06486e] py-2 px-4 rounded-md text-base cursor-pointer hover:bg-[#6495ED] hover:text-white transition"><Link to="" className="text-white">Get Started</Link></button>
+                <button className="bg-transparent text-white border-2 border-[#06486e] py-2 px-4 rounded-md text-base cursor-pointer hover:bg-[#6495ED] hover:text-white transition"><Link to="/signup" className="text-white">Get Started</Link></button>
             </div>
         </nav>
     );
