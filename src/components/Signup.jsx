@@ -1,9 +1,10 @@
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { useState } from "react";
 
 const Signup = () => {
     const [walletAddress, setWalletAddress] = useState("");
     const [isConnected, setIsConnected] = useState(false);
+    const navigate = useNavigate();
 
     const handleConnectWallet  = () => {
         if (!isConnected) {
@@ -18,7 +19,21 @@ const Signup = () => {
         const nameInput = document.querySelector('input[type="text"]').value;
         const passwordInput = document.querySelector('input[type="password"]').value;
         if (walletAddress && passwordInput) {
-            alert('UID created successfully! Welcome, ' + nameInput +  '.unius');
+            const userData = {
+                name: nameInput,
+                uniusId: `${nameInput}.unius`,
+                walletAddress: walletAddress,
+                walletName: 'Sui',
+            };
+            localStorage.setItem('uniusUser', JSON.stringify(userData));
+
+            const initialActivity = [
+                { id: 1, action: 'Account created', date: new Date().toLocaleDateString() },
+                { id: 2, action: 'Connected Sui Wallet', date: new Date().toLocaleDateString() },
+            ];
+            localStorage.setItem('uniusActivityLog', JSON.stringify(initialActivity));
+            localStorage.setItem('uniusMinted', 'false');
+            navigate('/dashboard');
         } else {
             alert('Please connect your Sui wallet and enter a password to proceed.');
         }

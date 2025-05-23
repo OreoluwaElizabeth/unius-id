@@ -17,7 +17,7 @@ const Herosection = () => {
                 <p className="text-lg md:text-xl mb-8 max-w-2xl mx-auto text-gray-100 animate-slide-up delay-100">
                     UID is a decentralized identity solution that enables users to manage their digital identities seamlessly.
                 </p>
-                <button className="bg-transparent text-white border-2 border-[#06486e] py-2 px-4 rounded-md text-base cursor-pointer hover:bg-[#6495ED] hover:text-white transition"><Link to="" className="text-white">Try it now</Link></button>
+                <button className="bg-transparent text-white border-2 border-[#06486e] py-2 px-4 rounded-md text-base cursor-pointer hover:bg-[#6495ED] hover:text-white transition"><Link to="/dashboard" className="text-white">Try it now</Link></button>
             </div>
 
             <style>
